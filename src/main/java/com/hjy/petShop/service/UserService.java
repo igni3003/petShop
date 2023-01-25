@@ -17,6 +17,10 @@ public class UserService {
 
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
+    /**
+     * 회원 정보 리스트
+     * @return: 회원 정보
+     */
     public List<UserVo> getUserList() {
         return userMapper.getUserList();
     }
