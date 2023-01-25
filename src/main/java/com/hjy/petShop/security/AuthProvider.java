@@ -28,7 +28,6 @@ public class AuthProvider implements AuthenticationProvider {
 
         PasswordEncoder passwordEncoder = userService.passwordEncoder();
         UsernamePasswordAuthenticationToken token;
-        System.out.println("log: 1234");
         UserVo userVo = userService.getUserById(id);
 
         if (userVo != null && passwordEncoder.matches(password, userVo.getPassword())) { // 일치하는 user 정보가 있는지 확인

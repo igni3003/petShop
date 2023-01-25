@@ -5,9 +5,11 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/signupPage.css">
     <title>Modify Information</title>
 </head>
 <body>
+    <div class="loginbox">
     <h2>회원 정보 수정</h2>
     <form action="/update" method="post">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
@@ -44,5 +46,6 @@
 
         <button type="submit">저장하기</button>
     </form>
+    </div>
 </body>
 </html>
