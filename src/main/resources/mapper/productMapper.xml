@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjy.petShop.mapper.ProductMapper">
+
+    <!--상품 정보 리스트 가져오기-->
+    <select id="getProductList" resultType="com.hjy.petShop.vo.ProductVo">
+        SELECT * FROM product
+    </select>
+
+    <!--상품 등록-->
+    <insert id="insertProduct">
+        INSERT INTO product(name, price, review, stock, regdate)
+        VALUES(#{name}, #{price}, #{review}, #{stock}, #{regdate})
+    </insert>
+
+    <!--상품 정보 가져오기-->
+    <select id="getProductName" resultType="com.hjy.petShop.vo.ProductVo">
+        SELECT * FROM product WHERE name = #{name}
+    </select>
+
+    <select id="getProductId" resultType="com.hjy.petShop.vo.ProductVo">
+        SELECT * FROM product WHERE id = #{id}
+    </select>
+
+    <!--상품 수정-->
+    <update id="updateProduct">
+        UPDATE product SET
+        name = #{name},
+        price = #{price},
+        review = #{review},
+        stock = #{stock}
+        WHERE id = #{id}
+    </update>
+
+    <!--상품 삭제-->
+    <delete id="deleteProduct">
+        DELETE
+        FROM product
+        WHERE id = #{id}
+    </delete>
+
+</mapper>
